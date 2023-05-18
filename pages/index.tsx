@@ -9,10 +9,6 @@ import useSWR from 'swr'
 export default function Home() {
     const { data, error, isLoading } = useSWR('/api/posts', fetcher)
 
-    if (data) {
-        console.log(data)
-    }
-
     return (
         <>
             <section className="w-full h-[700px]">
