@@ -1,6 +1,7 @@
 import { Logo } from "./brand"
 import { Dropdown } from "flowbite-react"
 import { HiBars3BottomRight } from "react-icons/hi2"
+import Link from "next/link"
 
 const Navigation: React.FC = () => {
     return (
@@ -13,19 +14,19 @@ const Navigation: React.FC = () => {
                 
 
                 <ul className="flex gap-4 items-center">
-                    <li className="hidden sm:block">Inicio</li>
-                    <li className="hidden sm:block">Proyectos</li>
-                    <li className="border-r pr-4 hidden sm:block">Contacto</li>
+                    <li className="hidden sm:block">
+                        <Link href="/">Inicio</Link>
+                    </li>
+                    <li className="border-r pr-4 hidden sm:block">
+                        <Link href="/">Contacto</Link>
+                    </li>
                     <li>
                         <Dropdown label={<HiBars3BottomRight className="text-3xl" />} arrowIcon={false} inline>
                             <Dropdown.Item>
-                                <a href="/">Inicio</a>
+                                <Link href="/">Inicio</Link>
                             </Dropdown.Item>
                             <Dropdown.Item>
-                                <a href="/">Proyectos</a>
-                            </Dropdown.Item>
-                            <Dropdown.Item>
-                                <a href="/">Contacto</a>
+                                <Link href="/">Contacto</Link>
                             </Dropdown.Item>
                         </Dropdown>
                         <p className="text-[10px] text-center">Menu</p>
