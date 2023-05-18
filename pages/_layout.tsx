@@ -1,3 +1,4 @@
+import Head from "next/head"
 import FooterLayout from "@/components/footer"
 import Navigation from "@/components/navigation"
 
@@ -8,10 +9,11 @@ interface RootLayourProps {
 export default function RootLayour(props: RootLayourProps) {
     return (
         <>
+            <Head>
+                <title>The New Flex Studio Record</title>
+            </Head>
             <Navigation />
-            <main>
-                {props.children}
-            </main>
+            <main>{props.children}</main>
             <FooterLayout/>
         </>
     )

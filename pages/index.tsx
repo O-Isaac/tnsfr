@@ -28,7 +28,7 @@ export default function Home() {
                     </h1>
             </section>
             <PostsWrapper>
-                {data?.response && data.response.data.slice(0, 6).map((data, index) => (
+                {data?.response && data.response.data.slice(0, 9).map((data, index) => (
                     <Post 
                         key={index}
                         image={data.media_url}
