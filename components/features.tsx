@@ -26,9 +26,11 @@ export const Post: React.FC<PostProps> = (props) => {
             <div className="py-4">
                 <h1 className="text-3xl font-bold">{props.title}</h1>
                 <p>{props.description}</p>
-                <button className="text-lg font-medium bg-black text-transparent my-1  group bg-gradient-to-r from-[#663177] to-[#C63F7B] bg-clip-text bg-size-200 hover:bg-pos-100">
-                    Ver post <span className="transition-all group-hover:pl-2">➜</span>
-                </button>
+                <a href={props.href}>
+                    <button className="text-lg font-medium bg-black text-transparent my-1  group bg-gradient-to-r from-[#663177] to-[#C63F7B] bg-clip-text bg-size-200 hover:bg-pos-100">
+                        Ver post <span className="transition-all group-hover:pl-2">➜</span>
+                    </button>
+                </a>
             </div>
         </article>
     )
