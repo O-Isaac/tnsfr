@@ -1,13 +1,14 @@
-import { Post, PostsWrapper } from "@/components/features"
-import { Member, TeamWrapper } from "@/components/team"
-import Video from "@/components/video"
-import { fetcher } from "@/utils/Fetcher"
 import useSWR from 'swr'
 
+import { Post, PostsWrapper } from "@/components/features"
+import { Member, TeamWrapper } from "@/components/team"
+import { ResponseInstagram } from '@/types/Instagram'
+import { fetcher } from "@/utils/Fetcher"
 
+import Video from "@/components/video"
 
 export default function Home() {
-    const { data, error, isLoading } = useSWR('/api/posts', fetcher)
+    const { data, error, isLoading } = useSWR<ResponseInstagram>('/api/posts', fetcher)
 
     return (
         <>
@@ -27,36 +28,14 @@ export default function Home() {
                     </h1>
             </section>
             <PostsWrapper>
-                <Post 
-                    image="https://i.imgur.com/zVIhXfS.jpeg"
-                    title="Lorem Ipsu" 
-                    description="Lorem Ipsu test hello world! more" 
-                />
-                  <Post 
-                    image="https://i.imgur.com/zVIhXfS.jpeg"
-                    title="Lorem Ipsu" 
-                    description="Lorem Ipsu test hello world! more" 
-                />
-                  <Post 
-                    image="https://i.imgur.com/zVIhXfS.jpeg"
-                    title="Lorem Ipsu" 
-                    description="Lorem Ipsu test hello world! more" 
-                />
-                  <Post 
-                    image="https://i.imgur.com/zVIhXfS.jpeg"
-                    title="Lorem Ipsu" 
-                    description="Lorem Ipsu test hello world! more" 
-                />
-                  <Post 
-                    image="https://i.imgur.com/zVIhXfS.jpeg"
-                    title="Lorem Ipsu" 
-                    description="Lorem Ipsu test hello world! more" 
-                />
-                  <Post 
-                    image="https://i.imgur.com/zVIhXfS.jpeg"
-                    title="Lorem Ipsu" 
-                    description="Lorem Ipsu test hello world! more" 
-                />
+                {data?.response && data.response.data.slice(0, 6).map((data, index) => (
+                    <Post 
+                        key={index}
+                        image={data.media_url}
+                        title={data.capiton}
+                        description={new Date(data.timestamp).toLocaleDateString("es-ES")} 
+                    />
+                ))}
             </PostsWrapper>
             <section className="text-center p-6 bg-black text-white">
                 <h1 className="text-5xl font-bold bg-gradient-to-r from-[#FF0F7B] to-[#F89B29] bg-clip-text text-transparent bg-size-200 animate-gradient-fast">
