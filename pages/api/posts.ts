@@ -7,7 +7,7 @@ import Cache from "node-cache"
 
 const requestCache = new Cache({ stdTTL: 900 })
 const params = {
-  fields: "id,caption,media_url,username,timestamp",
+  fields: "id,caption,media_url,username,timestamp,permalink",
   'access_token': process.env.token || ""
 }
 

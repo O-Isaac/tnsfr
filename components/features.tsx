@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 interface PostsWrapperProps {
     children: React.ReactNode
 }
@@ -14,18 +16,18 @@ interface PostProps {
     title: string
     description: string
     href?: string
-    image?: string
+    image: string
 }
 
 export const Post: React.FC<PostProps> = (props) => {
     return (
         <article className="bg-white max-w-md">
-            <img className="rounded-2xl" src={props.image} />
+            <Image className="rounded-2xl" alt="image" width={500} height={500} src={props.image} />
             <div className="py-4">
                 <h1 className="text-3xl font-bold">{props.title}</h1>
                 <p>{props.description}</p>
                 <button className="text-lg font-medium bg-black text-transparent my-1  group bg-gradient-to-r from-[#663177] to-[#C63F7B] bg-clip-text bg-size-200 hover:bg-pos-100">
-                    Leer Mas <span className="transition-all group-hover:pl-2">➜</span>
+                    Ver post <span className="transition-all group-hover:pl-2">➜</span>
                 </button>
             </div>
         </article>

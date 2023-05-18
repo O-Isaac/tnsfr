@@ -32,8 +32,9 @@ export default function Home() {
                     <Post 
                         key={index}
                         image={data.media_url}
-                        title={data.capiton}
-                        description={new Date(data.timestamp).toLocaleDateString("es-ES")} 
+                        href={data.permalink}
+                        title={new Date(data.timestamp).toLocaleDateString("es-ES")}
+                        description={data.caption} 
                     />
                 ))}
             </PostsWrapper>
