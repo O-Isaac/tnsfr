@@ -6,9 +6,12 @@ import { ResponseInstagram } from '@/types/Instagram'
 import { fetcher } from "@/utils/Fetcher"
 
 import Video from "@/components/video"
+import { useContext } from 'react'
+import { ContactModalContext } from '@/context/showContact'
 
 export default function Home() {
     const { data, error, isLoading } = useSWR<ResponseInstagram>('/api/posts', fetcher)
+    const { setShow } = useContext(ContactModalContext)
 
     return (
         <>
@@ -44,7 +47,7 @@ export default function Home() {
                 </h1>
                 <p className="max-w-2xl mx-auto py-5">The New Flex Studio nace de la iniciativa de ayudar a la gente a producir sus ideas audiovisuales y graficas, nuestra misión consiste en traer todo tipos de trabajos audiovisuales y grafica de la mente de nuestro cliente para apoyarles tanto en el proceso creativo como el proceso logico.</p>
                 <div className="bg-white max-w-fit mx-auto py-1 px-2 rounded-lg">
-                    <button className="text-lg font-medium bg-black text-transparent my-1 bg-gradient-to-r from-[#B429F9] to-[#26C5F3] bg-clip-text bg-size-200 hover:bg-pos-100">Contactar </button>
+                    <button className="text-lg font-medium bg-black text-transparent my-1 bg-gradient-to-r from-[#B429F9] to-[#26C5F3] bg-clip-text bg-size-200 hover:bg-pos-100" onClick={() => setShow && setShow(true)}>Contactar </button>
                 </div>
             </section>
             <section className="relative h-[400px] overflow-hidden">
@@ -79,7 +82,6 @@ export default function Home() {
                     />
                 </TeamWrapper>
             </section>
-           
         </>
     )
 }
