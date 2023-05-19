@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNFSR</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <style>
+        * { 
+            font-family: 'Rubik',Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container { 
+            max-width: 1200px; margin: auto; 
+        }
+
+        .layout {
+            grid-template-areas: 
+                "head head head"
+                "subh subh subh"
+                "body body body"
+            ;
+        }
+
+        .layout > .title {
+            margin-top: 2rem;
+            grid-area: head;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        .layout > .subtitle {
+            grid-area: subh;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+
+        .layout > .body {
+            grid-area: body;
+            max-width: 600px;
+            margin: 1rem auto;
+            padding: 0 1rem;
+        }
+
+        .body > p {
+            background: rgba(156, 248, 177, .5);
+            padding: 0.75rem;
+            border-radius: .25rem;
+            margin: 1rem 0;
+            border: 1px solid rgba(9, 171, 47, 0.5)
+        }
+
+    </style>
+</head>
+<body>
+    
+    <main class="container">
+        <section class="layout">
+            <h1 class="title">The New Flex Studio Record</h1>
+            <h2 class="subtitle">Notificación de contacto</h2>
+
+            <div  class="body">
+                <header>
+                    <h4>{{subject}}</h5>
+                    <h5>{{email}}</h4>
+                </header>
+                <p>{{message}}</p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
