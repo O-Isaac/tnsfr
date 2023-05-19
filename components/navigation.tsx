@@ -2,8 +2,12 @@ import { Logo } from "./brand"
 import { Dropdown } from "flowbite-react"
 import { HiBars3BottomRight } from "react-icons/hi2"
 import Link from "next/link"
+import { useContext } from "react"
+import { ContactModalContext } from "@/context/showContact"
 
 const Navigation: React.FC = () => {
+    const { setShow } = useContext(ContactModalContext)
+
     return (
         <nav className="flex justify-around p-4 bg-white">
             <div className="flex items-center justify-around w-full">
@@ -18,7 +22,7 @@ const Navigation: React.FC = () => {
                         <Link href="/">Inicio</Link>
                     </li>
                     <li className="border-r pr-4 hidden sm:block">
-                        <Link href="/">Contacto</Link>
+                        <button onClick={() => setShow && setShow(true)}>Contacto</button>
                     </li>
                     <li>
                         <Dropdown label={<HiBars3BottomRight className="text-3xl" />} arrowIcon={false} inline>
@@ -26,7 +30,7 @@ const Navigation: React.FC = () => {
                                 <Link href="/">Inicio</Link>
                             </Dropdown.Item>
                             <Dropdown.Item>
-                                <Link href="/">Contacto</Link>
+                                <button onClick={() => setShow && setShow(true)}>Contacto</button>
                             </Dropdown.Item>
                         </Dropdown>
                         <p className="text-[10px] text-center">Menu</p>
