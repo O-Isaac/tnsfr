@@ -102,7 +102,7 @@ export default function Home() {
           alt=""
         />
       </section>
-      <section>
+      <section id="equipo">
         <h1 className="text-center mx-auto px-2 text-2xl sm:text-5xl font-bold max-w-lg my-8">
           Nuestro
           <span className="bg-gradient-to-r from-[#663177] to-[#C63F7B] bg-clip-text text-transparent bg-size-200 animate-gradient-fastest">
