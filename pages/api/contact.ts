@@ -32,7 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         const emailResult = await email.sendHtml({
             from: process.env.emailFrom || "",
             to: process.env.emailTo || "",
-            subject: `[TNFSR] Notificación de contacto - ${body.email}`,
+            subject: `[TNFSR] Contact Notification - ${body.email}`,
             html: template.html
                 .replace("{{email}}", body.email)
                 .replace("{{subject}}", body.subject)

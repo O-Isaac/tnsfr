@@ -18,14 +18,14 @@ export default function FooterLayout() {
           </div>
           <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-2 sm:gap-6">
             <div>
-              <Footer.Title title="Sobre nosotros" />
+              <Footer.Title title="About us" />
               <Footer.LinkGroup col={true}>
                 <Footer.Link href="/">The New Flex Studio Record</Footer.Link>
-                <Footer.Link href="#equipo">Equipo</Footer.Link>
+                <Footer.Link href="#team">Team</Footer.Link>
               </Footer.LinkGroup>
             </div>
             <div>
-              <Footer.Title title="Siguenos en" />
+              <Footer.Title title="Follow us on" />
               <Footer.LinkGroup col={true}>
                 <Footer.Link href="https://github.com/O-Isaac/tnsfr">
                   Github

@@ -4,7 +4,6 @@ import ApiResult, { Body } from '@/utils/ApiResult'
 import axios from 'axios';
 import Cache from "node-cache"
 
-
 const requestCache = new Cache({ stdTTL: 900 })
 const params = {
   fields: "id,caption,media_url,username,timestamp,permalink",
@@ -17,6 +16,7 @@ const http = axios.create({
 });
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Body>) {
+
   const result = new ApiResult("ok", 200)
   console.log("%s - %s", "GET", "recive request!")
 

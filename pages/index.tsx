@@ -8,7 +8,6 @@ import { fetcher } from "@/utils/Fetcher";
 import Video from "@/components/video";
 import { useContext } from "react";
 import { ContactModalContext } from "@/context/showContact";
-import { Spinner } from "flowbite-react";
 import Loading from "@/components/loadingt";
 
 export default function Home() {
@@ -21,23 +20,24 @@ export default function Home() {
   return (
     <>
       <section className="w-full h-[700px]">
-        <h1 className="max-w-xl sm:max-w-5xl py-12 text-center mx-auto text-4xl sm:text-7xl font-bold">
-          Transforma tu
+      <h1 className="max-w-xl sm:max-w-3xl py-12 text-center mx-auto text-4xl sm:text-7xl font-bold">
+          Transform your
           <span className="bg-gradient-to-r from-[#663177] to-[#C63F7B] bg-clip-text text-transparent bg-size-200 animate-gradient-fastest">
             {" "}
-            visión
+            vision
           </span>{" "}
-          en
+          into
           <span className="bg-gradient-to-r from-[#FF0F7B] to-[#F89B29] bg-clip-text text-transparent bg-size-200 animate-gradient-fast">
             {" "}
-            realidad
+            reality
           </span>{" "}
-          con nuestra
+          with our
           <span className="bg-gradient-to-r from-[#B429F9] to-[#26C5F3] bg-clip-text text-transparent bg-size-200 animate-gradient">
             {" "}
-            creatividad
+            creativity
           </span>
         </h1>
+
         <Video
           className="h-[769px] w-[1200px] mx-auto md:rounded-2xl  object-cover"
           src="/videos/bg-1.mp4"
@@ -45,18 +45,19 @@ export default function Home() {
       </section>
       <section className="w-full h-[300px] sm:h-[400px] bg-black py-8" />
       <section className="w-full h-fit bg-black text-white pb-8">
-        <h1 className="text-center mx-auto px-2 text-2xl sm:text-5xl font-bold max-w-lg">
-          Convierte tus
+      <h1 className="text-center mx-auto px-2 text-2xl sm:text-5xl font-bold max-w-lg">
+          Turn your
           <span className="bg-gradient-to-r from-[#663177] to-[#C63F7B] bg-clip-text text-transparent bg-size-200 animate-gradient-fastest">
-            {" "}
-            ideas
+              {" "}
+              ideas
           </span>{" "}
-          en contenido visual y auditivo de
+          into high-quality
           <span className="bg-gradient-to-r from-[#B429F9] to-[#26C5F3] bg-clip-text text-transparent bg-size-200 animate-gradient">
-            {" "}
-            alta calidad
+              {" "}
+              visual and auditory content
           </span>
-        </h1>
+      </h1>
+
       </section>
       <Loading isLoading={isLoading}>
         <PostsWrapper>
@@ -79,18 +80,14 @@ export default function Home() {
           The New Flex Studio Record
         </h1>
         <p className="max-w-2xl mx-auto py-5">
-          The New Flex Studio nace de la iniciativa de ayudar a la gente a
-          producir sus ideas audiovisuales y graficas, nuestra misión consiste
-          en traer todo tipos de trabajos audiovisuales y grafica de la mente de
-          nuestro cliente para apoyarles tanto en el proceso creativo como el
-          proceso logico.
+          The New Flex Studio was born from the initiative to help people produce their audiovisual and graphic ideas. Our mission is to bring all kinds of audiovisual and graphic works from our clients&apos; minds to support them in both the creative and logical processes.
         </p>
         <div className="bg-white max-w-fit mx-auto py-1 px-2 rounded-lg">
           <button
             className="text-lg font-medium bg-black text-transparent my-1 bg-gradient-to-r from-[#B429F9] to-[#26C5F3] bg-clip-text bg-size-200 hover:bg-pos-100"
             onClick={() => setShow && setShow(true)}
           >
-            Contactar{" "}
+            Contact{" "}
           </button>
         </div>
       </section>
@@ -104,38 +101,39 @@ export default function Home() {
       </section>
       <section id="equipo">
         <h1 className="text-center mx-auto px-2 text-2xl sm:text-5xl font-bold max-w-lg my-8">
-          Nuestro
-          <span className="bg-gradient-to-r from-[#663177] to-[#C63F7B] bg-clip-text text-transparent bg-size-200 animate-gradient-fastest">
-            {" "}
-            equipo
-          </span>{" "}
-          de
-          <span className="bg-gradient-to-r from-[#B429F9] to-[#26C5F3] bg-clip-text text-transparent bg-size-200 animate-gradient">
-            {" "}
-            profesionales
-          </span>
+            Our
+            <span className="bg-gradient-to-r from-[#663177] to-[#C63F7B] bg-clip-text text-transparent bg-size-200 animate-gradient-fastest">
+                {" "}
+                team
+            </span>{" "}
+            of
+            <span className="bg-gradient-to-r from-[#B429F9] to-[#26C5F3] bg-clip-text text-transparent bg-size-200 animate-gradient">
+                {" "}
+                professionals
+            </span>
         </h1>
+
         <TeamWrapper>
-          <Member
+        <Member
             image="https://res.cloudinary.com/www-gastronomic-social-es/image/upload/v1663443883/PABLOGOTOO_osx7gq.jpeg"
-            job="CEO Fundador"
+            job="CEO Founder"
             name="Pablo"
-          />
-          <Member
+        />
+        <Member
             image="https://res.cloudinary.com/www-gastronomic-social-es/image/upload/v1663443756/LAURA-GOTO10_nqvipx.jpeg"
-            job="Jefa de Relaciones"
-            name="Laura "
-          />
-          <Member
+            job="Head of Relations"
+            name="Laura"
+        />
+        <Member
             image="https://res.cloudinary.com/www-gastronomic-social/image/upload/v1667337391/images/IMG_1006_ioeqmq.jpeg"
-            job="Jefe Redactor"
+            job="Head Editor"
             name="Nahuel"
-          />
-          <Member
+        />
+        <Member
             image="https://res.cloudinary.com/www-gastronomic-social/image/upload/v1667587040/images/RADI2-2_iz8blw.jpg"
             job="Community Manager"
             name="Radoslav"
-          />
+        />
         </TeamWrapper>
       </section>
     </>
