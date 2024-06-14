@@ -20,15 +20,28 @@ interface PostProps {
 }
 
 export const Post: React.FC<PostProps> = (props) => {
+  const imageUrl = new URL(props.image)
+  const isVideo = imageUrl.pathname.endsWith(".mp4")
+
   return (
     <article className="bg-white max-w-md">
-      <Image
-        className="rounded-2xl"
-        alt="image"
-        width={500}
-        height={500}
-        src={props.image}
-      />
+      {
+        isVideo ?
+        (
+          <video className="rounded-2xl aspect-square object-cover" width={500} height={500} src={imageUrl.href} />
+        )
+        :
+        (
+          <Image
+            className="rounded-2xl"
+            alt="image"
+            width={500}
+            height={500}
+            src={imageUrl.href}
+          />
+        )
+      }
+
       <div className="py-4">
         <h1 className="text-3xl font-bold">{props.title}</h1>
         <p>{props.description}</p>
