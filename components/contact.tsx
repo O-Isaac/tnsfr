@@ -73,7 +73,7 @@ export default function ModalContact(props: Prop) {
                         id="subject"
                         name="subject"
                         icon={HiAnnotation}
-                        placeholder="Business proposal"
+                        placeholder="Service Inquiry"
                         required={true}
                         type="text"
                     />
